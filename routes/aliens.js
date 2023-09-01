@@ -46,6 +46,7 @@ router.patch("/:id", async (req, res) => {
     const alien = await Alien.findById(req.params.id);
     if (alien != null) {
       alien.sub = req.body.sub;
+      
       const a1 = await alien.save();
       res.json(a1);
     } else {
